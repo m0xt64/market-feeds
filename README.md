@@ -6,6 +6,7 @@ This should be an open-source project which will welcome any contributions from 
 ## How to contribute
 You can contribute by adding new feeds. In order to create a new feed, you need to run create.py script. The script will initialize streamlit app and you should provide the information about the feed. Once you are happy with the results, you can submit your feed for being added on the website.
 
+### Creator
 Before you start, make sure you have the following installed:
 - Python 3.7 or higher
 - Streamlit
