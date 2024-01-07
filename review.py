@@ -8,9 +8,6 @@ import openai
 import pandas as pd
 import base64
 
-#os.environ["OPENAI_API_KEY"] = "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"
-#os.environ["DUNE_API_KEY"] = "hTdFI8LQcHtFauNrRuY394W2hRZRIfUQ"
-
 # Function to read JSON data from the uploaded file
 def load_template_json():
     """Function to load a template JSON file."""
