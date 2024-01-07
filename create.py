@@ -1,5 +1,6 @@
 import os
 import json
+import datetime
 import streamlit as st
 import openai as openai
 from openai import OpenAI
@@ -11,7 +12,7 @@ def setup_sidebar():
     st.sidebar.markdown("###### See help icon for tips and templates.")
 
     user_info = {
-        'saved_by': st.sidebar.text_input("Your nickname:",help="Enter a unique nickname that will be used to identify your contributions.")  
+        'created_by': st.sidebar.text_input("Your nickname:",help="Enter a unique nickname that will be used to identify your contributions.")  
     }
 
     api_info = {
@@ -25,9 +26,10 @@ def setup_sidebar():
 
     feed_info = {
         'name': st.sidebar.text_input("Feed name:", help="Enter a unique name for your feed. Examples: Ethereum Overview, Ethereum Staking: Lido"),
+        'frequency': st.sidebar.selectbox("Select data source", ["weekly"]),
         'data_source': st.sidebar.selectbox("Select data source", ["Dune Analytics"]),
         'query_id': st.sidebar.text_input("Insert your query ID:", help="Enter the query ID from Dune Analytics. If your feed is approved, we will use this query ID to programatically receive the data from Dune Analytics."),
-        'insert_data': st.sidebar.text_area("Insert your data:", help="Enter your query data here. Before feed approval, this is a simpler and more cost-effective method to gather necessary data for feed creation."),
+        'insert_data': st.sidebar.text_area("Insert your data:", help="Enter your query data here. Use copy paste (Ctrl+C and Ctrl+V). Before feed approval, this is a simpler and more cost-effective method to gather necessary data for feed creation."),
         'role': st.sidebar.text_area("Role:", help="Ex: You're a pro in data crunching and writing content that turns heads."),
         'goal': st.sidebar.text_area("Goal:", help="Ex: Your job is to dive into [INSERT YOUR TOPIC] data and turn what you find into a killer article."),
         'audience': st.sidebar.text_area("Audience:", help="Ex: Your readers are the users and investors who want weekly updates to stay in the loop on trends and news.Your article should offer them the must-know facts about the market, starting with some background and then spotlighting key takeaways and the latest weekly news."),
@@ -67,6 +69,12 @@ def execute_model(api_info, model_info, feed_info):
 def export_inputs_to_json(user_info, model_info, feed_info):
     # Use the 'name' from feed_info as the file name, adding '.json' extension
     file_name = f"{feed_info['name']}.json" if feed_info['name'] else 'unnamed_feed.json'
+
+    # Get the current date and time
+    current_datetime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+    # Add the current date and time to the user_info dictionary
+    user_info['created'] = current_datetime
+
     # Combine all the inputs into a single dictionary
     combined_info = {
         'user_info': user_info,
