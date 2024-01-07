@@ -1,6 +1,7 @@
 {
     "user_info": {
-        "saved_by": "m0xt"
+        "created_by": "m0xt",
+        "created": "2024-01-01 00:00"
     },
     "model_info": {
         "model": "gpt-4",
