@@ -1,0 +1,36 @@
+{
+  "user_info": 
+  {
+    "created_by": "m0xt", 
+    "created": "2024-01-07 14:03", 
+    "reviewed_by": "alex ", 
+    "reviewed": "2024-01-07 15:56",
+    "comment": "added some text for constraints", 
+  }, 
+  "model_info": 
+  {
+    "model": "gpt-4", 
+    "temperature": 1.0
+  }, 
+  "feed_info": 
+  {
+    "name": "Ethereum Staking Market", 
+    "frequency": "weekly", 
+    "data_source": "Dune Analytics", 
+    "query_id": "3108164", 
+    "insert_data": "", 
+    "role": "You're a pro in data crunching and writing content that turns heads.", 
+    "goal": "Your job is to dive into [ETHEREUM STAKING MARKET] data and turn what you find into a killer article.", 
+    "audience": "Your readers are the users and investors who want weekly updates to stay in the loop on trends and news.\nYour article should offer them the must-know facts about the market, starting with some background and then spotlighting key takeaways and the latest weekly news.", 
+    "constraints": "Expected format output:\nHeadline: (replace the Headline with your headline)\nArticle: (replace the Article with your article)\nStick to plain English. For numbers exceeding one thousand, separate the thousands with a decimal point.\n Do not explicitly mention the column name.\n You are restricted from doing any further calculations!", 
+    "size": "Keep it to 170 words max.", 
+    "instructions": "Here are the guidelines:\n[Step 1: Understanding the Dataset\nThe dataset represents TOP 5 Ethereum Liquid Staking Providers at a specific point in time. Step 1b: Review the 'week' column which denotes the end-of-week date for the provided dataset and set a time reference for this report.\nStep 2: Look at the 'eth_staked' column and 'weekly_change' column. (The data for weekly change is in %.)\nThis will show you how much Ethereum is being staked and how that changed over the last week by each provider.\nCompare these numbers across providers to see which are attracting the most staked Ethereum and who experienced the biggest/lowest weekly change.\nStep 3: Look at the 'average_APR_1w', 'average_APR_1m' columns. (The data for APR is in %.) These show the average annual percentage rate for different time periods.\nDo not comment all. Select some and provide commentary for the selected figures.\nComparing these across providers can show who is offering the most attractive rates.\nStep 4: Look at the 'volume' column (in $).\nThis gives the total weekly trading volume of the staked tokens.\nThis should give readers understanding and ability to compare among different entities.\nStep 5: Look at the 'holders' column. This shows the number of unique holders for each entity's token. Compare this across providers to see who has the most holders.\nStep 6: Examine the 'protocol fee' column.(the data is in %.) This shows the fees charged by each entity.\nProvide that information about each entity, so users can get a better idea about the fees associated with all selected entities.\nLower fees might attract more users and boost APR.]", 
+    "closing": "Make sure the content is interesting and grabs attention, but also maintain a professional tone because we're discussing financial topics.\nIt would be great if readers would come back every week to read your updates. Top it off with a headline that grabs attention. Don't forget to add some number into the headline!"
+  }, 
+  "testing": 
+  {
+    "sample_1": "RPL price and price in ETH dropped, yet liquidity, volume, and holder number increased. Uniswap dominates liquidity and volume shares.", 
+    "sample_2": "The dataset shows a decrease in RPL's price and holders increasing over a week. Uniswap is the top project in liquidity and volume.", 
+    "sample_3": "RPL's prices fell over the week, but liquidity and number of holders increased. The majority of liquidity and volume comes from Uniswap."
+  }
+}
