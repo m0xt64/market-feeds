@@ -1,5 +1,5 @@
 # Market Feeds
-The market feeds are used to provide the latest market insights about the Ethereum. The coverage can be extended to other blockchains in the future.
+The market feeds are used to provide the latest market insights about crypto. The coverage can be extended to all blockchains in the future.
 
 This should be an open-source project which will welcome any contributions from the community. The goal is to provide a reliable, accurate and insightfull market feeds for the community. Below is explanation of the project structure and how to contribute. 
 
